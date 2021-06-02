@@ -39,7 +39,7 @@ def montecarlo(n):
    for i in range(1, n + 1):
      x = random.random()
      y = random.random()
-     if math.sqrt(x**2 + y**2) <= 1:
+     if math.sqrt(x**2 + y**2) <1:
          c = c + 1
    pi = 4 * (c / n)
    return pi 
