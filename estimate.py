@@ -15,7 +15,7 @@ class TestWallis(unittest.TestCase):
 def wallis(n):
   p = 1
   for j in range(1, n + 1):
-    p = p*((4 * j**2) / ((4 * j**2) - 1))
+    p = p*((4*j**2) / ((4*j**2) - 1))
   p = p*2
   return p
 
@@ -39,7 +39,7 @@ def monte_carlo(n):
    for k in range(1, n + 1):
      x = random.random()
      y = random.random()
-     if math.sqrt(x**2 + y**2) < 1:
+     if math.sqrt(x**2 + y**2) <= 1:
          c = c + 1
    q = 4 * (c / n)
    return q
