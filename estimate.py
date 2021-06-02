@@ -15,8 +15,8 @@ class TestWallis(unittest.TestCase):
 def wallis(n):
   pi = 1
   for i in range(1, n + 1):
-    pi *= ((4 * i * i) / ((4 * i * i) - 1))
-  pi *= 2
+    pi = pi*((4 * i * i) / ((4 * i * i) - 1))
+  pi = pi*2
   return pi
 
 class TestMC(unittest.TestCase):
@@ -33,13 +33,13 @@ class TestMC(unittest.TestCase):
             pi = monte_carlo(i)
             self.assertTrue(abs(pi - math.pi) < 0.4, msg=f"Estimate with even {i} iterations is {pi} which is not accurate enough.\n")
         
-def montecarlo(n):
+def monte_carlo(n):
    pi = 1
    c = 0
    for i in range(1, n + 1):
      x = random.random()
      y = random.random()
-     if math.sqrt(x**2 + y**2) <1:
+     if math.sqrt(x**2 + y**2) < 1:
          c = c + 1
    pi = 4 * (c / n)
    return pi 
